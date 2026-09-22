@@ -27,13 +27,16 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://digital-heroes-kmw9.onrender.com/api/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         },
-        body: JSON.stringify(formData),
-      });
+      );
 
       const data = await response.json();
 
@@ -55,7 +58,6 @@ function Login() {
       console.log("Token saved:", Boolean(sessionStorage.getItem("token")));
       console.log("Navigating to dashboard...");
 
-      // Temporary debugging navigation
       window.location.href = "/dashboard";
     } catch (error) {
       console.error("Login error:", error);
@@ -111,11 +113,7 @@ function Login() {
             />
           </div>
 
-          <button
-            type="submit"
-            className="login-button"
-            disabled={loading}
-          >
+          <button type="submit" className="login-button" disabled={loading}>
             {loading ? "Signing in..." : "Sign In"}
           </button>
         </form>

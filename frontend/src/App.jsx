@@ -26,9 +26,15 @@ function Home() {
         </Link>
 
         <div className={`nav-links ${mobileMenuOpen ? "active" : ""}`}>
-          <a href="#how-it-works" onClick={closeMobileMenu}>How It Works</a>
-          <a href="#charity" onClick={closeMobileMenu}>Charities</a>
-          <a href="#rewards" onClick={closeMobileMenu}>Rewards</a>
+          <a href="#how-it-works" onClick={closeMobileMenu}>
+            How It Works
+          </a>
+          <a href="#charity" onClick={closeMobileMenu}>
+            Charities
+          </a>
+          <a href="#rewards" onClick={closeMobileMenu}>
+            Rewards
+          </a>
         </div>
 
         <div className="nav-actions">
@@ -40,8 +46,8 @@ function Home() {
             Join Now ↗
           </Link>
 
-          <button 
-            className={`mobile-toggle ${mobileMenuOpen ? "open" : ""}`} 
+          <button
+            className={`mobile-toggle ${mobileMenuOpen ? "open" : ""}`}
             onClick={toggleMobileMenu}
             aria-label="Toggle Navigation Menu"
           >
@@ -52,7 +58,6 @@ function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
           <div className="hero-badge">
@@ -88,7 +93,6 @@ function Home() {
           </div>
         </div>
 
-        {/* Hero Visual */}
         <div className="hero-visual">
           <div className="visual-glow"></div>
 
@@ -167,7 +171,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Charity Section */}
       <section className="charity-section" id="charity">
         <div className="section-heading">
           <span className="section-eyebrow">MORE THAN A GAME</span>
@@ -194,7 +197,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="footer">
         <Link to="/" className="logo">
           <span className="logo-icon">D</span>

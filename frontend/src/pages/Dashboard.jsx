@@ -38,13 +38,16 @@ function Dashboard() {
     try {
       const token = sessionStorage.getItem("token");
 
-      const response = await fetch("http://localhost:5000/api/scores", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+      const response = await fetch(
+        "https://digital-heroes-kmw9.onrender.com/api/scores",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
 
       const data = await response.json();
 
@@ -67,7 +70,9 @@ function Dashboard() {
   useEffect(() => {
     const fetchCharities = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/charities");
+        const response = await fetch(
+          "https://digital-heroes-kmw9.onrender.com/api/charities",
+        );
 
         const data = await response.json();
 
@@ -92,7 +97,7 @@ function Dashboard() {
         const token = sessionStorage.getItem("token");
 
         const response = await fetch(
-          "http://localhost:5000/api/charities/selected",
+          "https://digital-heroes-kmw9.onrender.com/api/charities/selected",
           {
             method: "GET",
             headers: {
@@ -126,7 +131,7 @@ function Dashboard() {
         const token = sessionStorage.getItem("token");
 
         const response = await fetch(
-          "http://localhost:5000/api/subscriptions",
+          "https://digital-heroes-kmw9.onrender.com/api/subscriptions",
           {
             method: "GET",
             headers: {
@@ -159,7 +164,7 @@ function Dashboard() {
         const token = sessionStorage.getItem("token");
 
         const response = await fetch(
-          "http://localhost:5000/api/winners/my-winnings",
+          "https://digital-heroes-kmw9.onrender.com/api/winners/my-winnings",
           {
             method: "GET",
             headers: {
@@ -199,17 +204,20 @@ function Dashboard() {
 
       const token = sessionStorage.getItem("token");
 
-      const response = await fetch("http://localhost:5000/api/scores", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+      const response = await fetch(
+        "https://digital-heroes-kmw9.onrender.com/api/scores",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            stablefordScore: Number(stablefordScore),
+            playedAt: playedAt,
+          }),
         },
-        body: JSON.stringify({
-          stablefordScore: Number(stablefordScore),
-          playedAt: playedAt,
-        }),
-      });
+      );
 
       const data = await response.json();
 
@@ -260,7 +268,7 @@ function Dashboard() {
       const token = sessionStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/scores/${scoreId}`,
+        `https://digital-heroes-kmw9.onrender.com/api/scores/${scoreId}`,
         {
           method: "PUT",
           headers: {
@@ -307,7 +315,7 @@ function Dashboard() {
       const token = sessionStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/scores/${scoreId}`,
+        `https://digital-heroes-kmw9.onrender.com/api/scores/${scoreId}`,
         {
           method: "DELETE",
           headers: {
@@ -338,16 +346,19 @@ function Dashboard() {
     try {
       const token = sessionStorage.getItem("token");
 
-      const response = await fetch("http://localhost:5000/api/subscriptions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+      const response = await fetch(
+        "https://digital-heroes-kmw9.onrender.com/api/subscriptions",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            plan: plan,
+          }),
         },
-        body: JSON.stringify({
-          plan: plan,
-        }),
-      });
+      );
 
       const data = await response.json();
 
@@ -380,7 +391,7 @@ function Dashboard() {
       const token = sessionStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/api/subscriptions/cancel",
+        "https://digital-heroes-kmw9.onrender.com/api/subscriptions/cancel",
         {
           method: "PUT",
           headers: {
@@ -414,7 +425,7 @@ function Dashboard() {
       const token = sessionStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/api/charities/select",
+        "https://digital-heroes-kmw9.onrender.com/api/charities/select",
         {
           method: "PUT",
           headers: {
@@ -473,7 +484,7 @@ function Dashboard() {
       const token = sessionStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/api/charities/contribution",
+        "https://digital-heroes-kmw9.onrender.com/api/charities/contribution",
         {
           method: "PUT",
           headers: {
@@ -946,10 +957,6 @@ function Dashboard() {
             </div>
           )}
         </section>
-
-        {/* =============================== */}
-        {/* CHARITY CONTRIBUTION */}
-        {/* =============================== */}
 
         <section className="dashboard-scores-section">
           <div className="section-title-row">
