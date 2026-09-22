@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
-import Login from "./pages/login.jsx";
-import Dashboard from "./pages/dashboard.jsx";
-import Register from "./pages/register.jsx";
+import Login from "./pages/Login.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Register from "./pages/Register.jsx";
 
 function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
